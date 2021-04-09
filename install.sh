@@ -31,11 +31,11 @@ sudo ufw --force enable
 sudo ufw allow OpenSSH
 
 # Disabling root login 
-echo "PermitRootLogin no" >> /etc/ssh/sshd_config 
-echo "PermitEmptyPasswords no" /etc/ssh/sshd_config
+sudo echo "PermitRootLogin no" >> /etc/ssh/sshd_config 
+sudo echo "PermitEmptyPasswords no" /etc/ssh/sshd_config
 
 # Automatic downloads of security updates (package: unattended-upgrades)
-echo "Unattended-Upgrade::Allowed-Origins {
+sudo echo "Unattended-Upgrade::Allowed-Origins {
 #   "${distro_id}:${distro_codename}-security";
 #//  "${distro_id}:${distro_codename}-updates";
 #//  "${distro_id}:${distro_codename}-proposed";
@@ -48,7 +48,7 @@ echo 'Configurando fail2Ban...'
 sudo systemctl start fail2ban
 sudo systemctl enable fail2ban
 
-echo "
+sudo echo "
 [sshd]
 enabled = true
 port = 22
@@ -59,10 +59,10 @@ maxretry = 4
 
 # Git
 echo 'Instalando git-lfs...'
-git-lfs install
+sudo git-lfs install
 
 # ZShell install
-echo 'Instalando zsh...'
+ echo 'Instalando zsh...'
 chsh -s $(which zsh)
 grep zsh /etc/shells
 
@@ -148,7 +148,7 @@ source ~/.zshrc
 
 # SFTP Server / FTP server that runs over ssh
 echo 'Configurando SFTP Server...'
-echo "
+sudo echo "
 Match group sftp
 ChrootDirectory /home
 X11Forwarding no
