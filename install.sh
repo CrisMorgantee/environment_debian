@@ -63,7 +63,7 @@ sudo git-lfs install
 
 # ZShell install
  echo 'Instalando zsh...'
-chsh -s $(which zsh)
+# chsh -s $(which zsh)
 grep zsh /etc/shells
 
 # Oh-My-Zsh install
