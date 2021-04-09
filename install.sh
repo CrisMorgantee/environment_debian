@@ -31,8 +31,8 @@ sudo ufw --force enable
 sudo ufw allow OpenSSH
 
 # Disabling root login 
-sudo echo "PermitRootLogin no" >> /etc/ssh/sshd_config 
-sudo echo "PermitEmptyPasswords no" /etc/ssh/sshd_config
+sudo echo "PermitRootLogin no" >> sudo /etc/ssh/sshd_config 
+sudo echo "PermitEmptyPasswords no" sudo /etc/ssh/sshd_config
 
 # Automatic downloads of security updates (package: unattended-upgrades)
 sudo echo "Unattended-Upgrade::Allowed-Origins {
@@ -41,7 +41,7 @@ sudo echo "Unattended-Upgrade::Allowed-Origins {
 #//  "${distro_id}:${distro_codename}-proposed";
 #//  "${distro_id}:${distro_codename}-backports";
 #Unattended-Upgrade::Automatic-Reboot "true"; 
-#}; " >> /etc/apt/apt.conf.d/50unattended-upgrades
+#}; " >> sudo /etc/apt/apt.conf.d/50unattended-upgrades
 
 # Fail2Ban install (package: fail2ban)
 echo 'Configurando fail2Ban...'
@@ -55,7 +55,7 @@ port = 22
 filter = sshd
 logpath = /var/log/auth.log
 maxretry = 4
-" >> /etc/fail2ban/jail.local
+" >> sudo /etc/fail2ban/jail.local
 
 # Git
 echo 'Instalando git-lfs...'
@@ -154,7 +154,7 @@ ChrootDirectory /home
 X11Forwarding no
 AllowTcpForwarding no
 ForceCommand internal-sftp
-" >> /etc/ssh/sshd_config
+" >> sudo /etc/ssh/sshd_config
 
 sudo service ssh restart
 
