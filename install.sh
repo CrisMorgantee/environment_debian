@@ -23,7 +23,7 @@ sudo apt-get install -f -y openssh-server unattended-upgrades ufw fail2ban apt-t
 
 # Enable Firewall
 echo 'Habilitando porta 22...'
-ufw allow 22
+sudo ufw allow 22
 echo 'Habilitando firewall...'
 sudo ufw --force enable 
 
