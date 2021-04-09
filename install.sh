@@ -160,4 +160,5 @@ echo 'Removendo pacotes não utilizados...'
 sudo apt-get autoremove
 sudo apt-get clean 
 
+zsh
 exit 0
