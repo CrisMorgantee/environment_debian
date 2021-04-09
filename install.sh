@@ -88,6 +88,9 @@ git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/c
 # Zsh-completions
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
+# Create .zshrc
+sudo rm $HOME/.zshrc
+curl https://gist.githubusercontent.com/CrisMorgantee/23d22693037449cb4d9c0baff6b02b9f/raw/fd0c5ddc0ffdb0f4d76507c8dda6be012f09a8c7/.zshrc > $HOME/.zshrc
 source ~/.zshrc
 
 # Vim configs
@@ -139,12 +142,6 @@ echo 'Instalando yarn...'
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install --no-install-recommends yarn
-
-
-# Create .zshrc
-rm $HOME/.zshrc
-curl https://gist.githubusercontent.com/CrisMorgantee/23d22693037449cb4d9c0baff6b02b9f/raw/fd0c5ddc0ffdb0f4d76507c8dda6be012f09a8c7/.zshrc > $HOME/.zshrc
-source ~/.zshrc
 
 # SFTP Server / FTP server that runs over ssh
 echo 'Configurando SFTP Server...'
