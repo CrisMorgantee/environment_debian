@@ -19,7 +19,7 @@ sudo apt-get -y upgrade
 
 # Install packages
 echo 'Instalando pacotes...'
-sudo apt-get install -f -y openssh-server unattended-upgrades ufw fail2ban apt-transport-https git git-lfs zsh tmux neofetch traceroute speedtest-cli fonts-firacode ffmpeg libavcodec-extra 
+sudo apt-get install -f -y openssh-server unattended-upgrades ufw fail2ban apt-transport-https git git-lfs zsh vim tmux neofetch traceroute speedtest-cli fonts-firacode ffmpeg libavcodec-extra 
 
 # Enable Firewall
 echo 'Habilitando porta 22...'
