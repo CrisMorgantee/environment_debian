@@ -69,7 +69,7 @@ grep zsh /etc/shells
 # Oh-My-Zsh install
 echo 'Instalando e configurando oh-my-zsh...'
 echo 'y' | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-zsh 
+# zsh
 
 # Spaceship theme install
 sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt" --depth=1
